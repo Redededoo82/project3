@@ -17,15 +17,15 @@
 
 ### Aaron
 ##### Front-end
-
+###### U.I. React dynamic html
 
 ### Jack
 ##### Front-end
-
+###### CSS styling, client side Java Script
 
 ### Will
 ##### Back-end
-
+###### Server Routing, Database, API
 
 ### Project Management tool
 
