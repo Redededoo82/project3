@@ -1,52 +1,74 @@
 import React from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
-export class SignUpForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
-
-  render() {
-    const { email, password } = this.state;
-    return (
-        <div>
-            <h3>SignUp</h3>
-            <form onSubmit={this.handleSubmit}>
+const ValidatedSignUpForm = () => (
+    <Formik
+        initialValues = {{email: "", password:""}}
+        onSubmit= {(values, {setSubmitting}) => {
+            console.log("submitting")
+        }}
+        
+        validationSchema ={Yup.object().shape({
+            email: Yup.string()
+            .email()
+            .required("required"),
+            password: Yup.string()
+            .required("required")
+            .min(10, "Password is not long enough. Minimum is 10 chars.")
+            .matches(/(?=.*[0-9])/, "Password must contain a number")
+        })}
+        >
+        
+            {props => {
+                const { 
+                    values, 
+                    touched, 
+                    errors, 
+                    isSubmitting, 
+                    handleChange, 
+                    handleBlur, 
+                    handleSubmit
+                } = props;
+             return(
+                 <div>
+                     <h1>Sign Up</h1>
+                <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input
                 name="email"
                 type="text"
                 placeholder="Enter your email"
-                value={email}
-                onChange={this.handleChange}
+                value={values.email}
+                onChange={handleChange}
+                onBlur = {handleBlur}
+                className = {errors.email && touched.email && "error"}
                 />
+
+                {errors.email && touched.email && (
+                    <div className= "input-feedback">{errors.email}</div>
+                )}
+
                 <label htmlFor="email">Password</label>
                 <input
                 name="password"
                 type="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={this.handleChange}
+                value={values.password}
+                onChange={handleChange}
+                onBlur = {handleBlur}
+                className = {errors.password && touched.password && "error"}
                 />
-                <button type="submit">Submit</button>
+                 {errors.password && touched.password && (
+                    <div className= "input-feedback">{errors.password}</div>
+                )}
+                <button type="submit" disabled = {isSubmitting}>Login</button>
             </form>
-      </div>
-    );
-  }
+            </div>
+            );
+        }}   
+            
+    </Formik>
+);
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
-  handleSubmit = event => {
-    console.log("Submitting");
-    console.log(this.state);
-  };
-}
-
-export default SignUpForm;
+export default ValidatedSignUpForm;
