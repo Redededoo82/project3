@@ -29,10 +29,16 @@
 
 ### Project Management tool
 
-![Alt text](./images/ghproj.PNG "title")
+![Alt text](./images/proj3prop.png "title")
 
 
 # New Tech
+
+### Formik
+
+### yup
+
+### email-validator
 
 ### Map box
 

@@ -15,8 +15,8 @@ const ValidatedSignUpForm = () => (
             .required("required"),
             password: Yup.string()
             .required("required")
-            .min(10, "Password is not long enough. Minimum is 10 chars.")
-            .matches(/(?=.*[0-9])/, "Password must contain a number")
+            .min(10, " Minimum is 10 chars.")
+            .matches(/(?=.*[0-9])/, " Must contain a number")
         })}
         >
         
