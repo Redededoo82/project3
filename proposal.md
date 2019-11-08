@@ -17,15 +17,17 @@
 
 ### Aaron
 ##### Front-end
-###### U.I. React dynamic html
+###### U.I. React dynamic html, login form, 
+
+
 
 ### Jack
 ##### Front-end
-###### CSS styling, client side Java Script
+###### CSS styling, client side Java Script, REACT, blog posts/ event page
 
 ### Will
 ##### Back-end
-###### Server Routing, Database, API
+###### Server Routing, Database, API, trouble shooting expert 
 
 ### Project Management tool
 
@@ -34,6 +36,7 @@
 
 # New Tech
 
+
 ### Formik
 
 ### yup
@@ -41,5 +44,6 @@
 ### email-validator
 
 ### Map box
+
 
 ### User Authentication
