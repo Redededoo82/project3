@@ -14,7 +14,10 @@ module.exports = {
     create : function(req, res){
         db.Event
         .create({
-            title: req.body.title
+            title: req.body.title,
+            description: req.body.description,
+            location: req.body.location,
+            date: req.body.date
         }).then(function(data){
             res.json(data);
         })
