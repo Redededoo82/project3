@@ -35,14 +35,26 @@
 
 ### Project Management tool
 
-![Alt text](./images/ghproj.PNG "title")
+![Alt text](./images/proj3prop.png "title")
 
 https://github.com/Redededoo82/project3/projects/1
 
 # New Tech
 
+
 ### Map box - A mapping api that will show the exact location of the event and make it easier for patrons to find the more discreet locations
 https://www.mapbox.com
+=======
+
+### Formik
+
+### yup
+
+
+
+### Map box
+
+
 
 ### User Authentication - We are using user authentification through a sign up as long as everybody has signed up with the correct information is then stored in the database and kept there to be able to keep track of user interactions on the web page.
 https://www.npmjs.com/package/formik
