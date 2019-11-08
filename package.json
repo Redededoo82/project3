@@ -2,9 +2,17 @@
   "name": "project3",
   "version": "1.0.0",
   "description": "after party app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,12 +21,11 @@
   "author": "aaron will jack",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "formik": "^2.0.3",
+    "if-env": "^1.0.4",
     "mongoose": "^5.7.8",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "yup": "^0.27.0"
+    "nodemon": "^1.19.4"
   }
 }
