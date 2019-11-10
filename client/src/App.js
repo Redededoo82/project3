@@ -1,20 +1,27 @@
 import React from 'react';
-
 import './Forms.css';
-import LoginForm from  './pages/LoginForm';
-import SignUpForm from './pages/SignUpForm';
-import AboutPage from './pages/AboutPage';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
+import AboutPage from './AboutPage';
+import Home from './Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from './Nav';
 
 
 function App() {
   return (
-    <div className="App">
-          <AboutPage></AboutPage>
-          <SignUpForm></SignUpForm>
-          <br></br>
-          <LoginForm></LoginForm>
-          
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+        <Route path="/about" component={AboutPage}/>
+        <Route path="/signup" component={SignUpForm}/>
+        <Route path="/login" component={LoginForm}/>
+        <Route path="/" exact component={Home}/>
+        </Switch>
+      </div>
+    </Router>
+
   );
 }
 

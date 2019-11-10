@@ -1,7 +1,8 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import ReactStrap from "reactstrap";
+
+
 const ValidatedSignUpForm = () => (
     <Formik
         initialValues = {{email: "", password:""}}
