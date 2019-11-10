@@ -9,7 +9,10 @@ function Navbar() {
           
           <Nav>
             <NavItem>
-              <NavLink href="/about">About Page</NavLink>
+              <NavLink href="/events">Events</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/signup">Sign Up</NavLink>
