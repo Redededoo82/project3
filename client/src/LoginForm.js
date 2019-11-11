@@ -12,8 +12,8 @@ const ValidatedLoginForm = () => (
         }}
         
         validationSchema ={Yup.object().shape({
-            email: Yup.string()
-            .email()
+            
+            username: Yup.string()
             .required("required"),
             password: Yup.string()
             .required("required")
@@ -36,19 +36,19 @@ const ValidatedLoginForm = () => (
                  <div>
                      <h1>Log in</h1>
                 <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">username</label>
                 <input
                 name="email"
                 type="text"
-                placeholder="Enter your email"
-                value={values.email}
+                placeholder="Enter your username"
+                value={values.username}
                 onChange={handleChange}
                 onBlur = {handleBlur}
-                className = {errors.email && touched.email && "error"}
+                className = {errors.username && touched.username && "error"}
                 />
 
-                {errors.email && touched.email && (
-                    <div className= "input-feedback">{errors.email}</div>
+                {errors.username && touched.username && (
+                    <div className= "input-feedback">{errors.username}</div>
                 )}
 
                 <label htmlFor="email">Password</label>
