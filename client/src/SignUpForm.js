@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-
+import {FormGroup, Label, Input} from 'reactstrap';
 
 const ValidatedSignUpForm = () => (
     <Formik
@@ -22,8 +22,8 @@ const ValidatedSignUpForm = () => (
                 .matches(/(?=.*[0-9])/, " Must contain a number"),
             username: Yup.string()
                 .required("required")
-                
-                
+
+
         })}
     >
 
@@ -70,29 +70,35 @@ const ValidatedSignUpForm = () => (
                             <div className="input-feedback">{errors.password}</div>
                         )}
 
-                        
-                            <label htmlFor="email">username</label>
-                            <input
-                                name="username"
-                                type="text"
-                                placeholder="Enter your username"
-                                value={values.username}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                className={errors.username && touched.username && "error"}
-                            />
 
-                            {errors.username && touched.username && (
-                                <div className="input-feedback">{errors.username}</div>
-                            )}
+                        <label htmlFor="email">username</label>
+                        <input
+                            name="username"
+                            type="text"
+                            placeholder="Enter your username"
+                            value={values.username}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={errors.username && touched.username && "error"}
+                        />
 
-                            <button type="submit" disabled={isSubmitting}>SignUp</button>
-                        </form>
-            </div>
-                    );
-                }}   
-                    
-    </Formik>
+                        {errors.username && touched.username && (
+                            <div className="input-feedback">{errors.username}</div>
+                        )}
+
+                        <button type="submit" disabled={isSubmitting}>SignUp</button>
+                    </form>
+                    <FormGroup check>
+                        <Label check>
+                            <Input type="checkbox" />{' '}
+                            I am over the age of 18. I promise.
+        </Label>
+                    </FormGroup>
+                </div>
             );
+        }}
 
-            export default ValidatedSignUpForm;
+    </Formik>
+);
+
+export default ValidatedSignUpForm;
