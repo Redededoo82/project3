@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+
 const ValidatedSignUpForm = () => (
     <Formik
         initialValues = {{email: "", password:""}}
@@ -62,7 +63,7 @@ const ValidatedSignUpForm = () => (
                  {errors.password && touched.password && (
                     <div className= "input-feedback">{errors.password}</div>
                 )}
-                <button type="submit" disabled = {isSubmitting}>Login</button>
+                <button type="submit" disabled = {isSubmitting}>SignUp</button>
             </form>
             </div>
             );
