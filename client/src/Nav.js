@@ -11,9 +11,7 @@ function Navbar() {
             <NavItem>
               <NavLink href="/events">Events</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/about">About</NavLink>
-            </NavItem>
+            
             <NavItem>
               <NavLink href="/signup">Sign Up</NavLink>
             </NavItem>
