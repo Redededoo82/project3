@@ -4,12 +4,14 @@ module.exports = {
     findOne : function(req, res){
         db.Comment
             .find({
+                post: req.body.post
             })
             .then(function(data){
                 res.json(data);
             })
             .catch(err => res.status(422).json(err));
     },
+
 
     create : function(req, res){
         db.Comment
