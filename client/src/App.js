@@ -1,13 +1,13 @@
 import React from 'react';
 // import './Forms.css';
-import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 // import AboutPage from './Home';
 import Home from './Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Events from './Events';
-
+import Error from './Error';
 
 function App() {
   return (
@@ -18,8 +18,10 @@ function App() {
         <Route path="/events" component={Events}/>
         {/* <Route path="/about" component={AboutPage}/> */}
         <Route path="/signup" component={SignUpForm}/>
-        <Route path="/login" component={LoginForm}/>
+        {/* <Route path="/login" component={LoginForm}/> */}
         <Route path="/" exact component={Home}/>
+        <Route component={Error}/>
+
         </Switch>
       </div>
     </Router>
