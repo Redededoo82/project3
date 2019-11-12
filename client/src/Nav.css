@@ -13,3 +13,13 @@
     align-items: center;
     list-style: none;
   }
+
+  .nav-icon{
+    
+    display: flex;
+    justify-content: space-around;
+    float: left;
+    border-radius: 10px;
+  }
+
+  
