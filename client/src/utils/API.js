@@ -20,13 +20,13 @@ export default {
         return axios.get("/api/users")
     },
 
-    postComment: function (comment) {
+    postComment: function (commento) {
         axios.post("/api/comments",
             {
                 user: "TEST",
-                comment: comment,
+                comment: commento,
                 post: "TEST POST",
-                date: "TEST DATE"
+                date: 11/12/2019
             }).then(function (res) {
                 return (res);
             })

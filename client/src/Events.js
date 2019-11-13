@@ -10,7 +10,8 @@ import API from "./utils/API"
 class Events extends Component {
     state = {
         events: [],
-        comments: []
+        comments: [],
+        value: ""
     }
 
     comments = [{
@@ -29,7 +30,18 @@ class Events extends Component {
 
     componentDidMount() {
         this.getEvents();
+        this.getComments();
     }
+
+    handleChange = (event) => {
+        this.setState({ value: event.target.value});
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.postComment(this.state.value);
+      }
+    
 
     getEvents = () => {
         API.getEvents()
@@ -79,11 +91,13 @@ class Events extends Component {
                 </InputGroup>
                 <div>
                     <h3>Comments</h3>
-                    <Input type="textarea" name="text" id="exampleText" />
-                    <Button onClick={() => {
-                        this.postComment()
-                    }
-                    }>Submit</Button>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Name:
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
 
                     {this.comments.map(item => <li>{item.comment} - {item.name}</li>)}
                     {this.state.comments.map(item => <li>{item.comment} - {item.name}</li>)}
