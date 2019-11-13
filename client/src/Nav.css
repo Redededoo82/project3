@@ -13,3 +13,20 @@
     align-items: center;
     list-style: none;
   }
+
+  .nav-icon{
+    
+    display: flex;
+    justify-content: space-around;
+    float: left;
+    border-radius: 10px;
+  }
+  .poo{
+    
+    display: flex;
+    justify-content: space-around;
+    float: right;
+    border-radius: 10px;
+  }
+
+  

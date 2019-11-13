@@ -1,9 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import {FormGroup, Label, Input} from 'reactstrap';
+import {FormGroup, Label, Input, Jumbotron, Container} from 'reactstrap';
 
 const ValidatedSignUpForm = () => (
+    
     <Formik
         initialValues={{ email: "", password: "", username: "" }}
         onSubmit={(values, { setSubmitting }) => {
@@ -55,7 +56,7 @@ const ValidatedSignUpForm = () => (
                         {errors.email && touched.email && (
                             <div className="input-feedback">{errors.email}</div>
                         )}
-
+                        <br></br>
                         <label htmlFor="email">Password</label>
                         <input
                             name="password"
@@ -69,8 +70,7 @@ const ValidatedSignUpForm = () => (
                         {errors.password && touched.password && (
                             <div className="input-feedback">{errors.password}</div>
                         )}
-
-
+                        <br></br>
                         <label htmlFor="email">username</label>
                         <input
                             name="username"

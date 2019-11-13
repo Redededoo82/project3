@@ -4,7 +4,7 @@ module.exports = {
     findOne : function(req, res){
         db.Comment
             .find({
-                post: req.body.post
+                // post: req.body.post
             })
             .then(function(data){
                 res.json(data);
