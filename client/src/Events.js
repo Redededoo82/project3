@@ -8,21 +8,24 @@ import API from "./utils/API"
 
 
 class Events extends Component {
+    state = {
+        events: [],
+        comments: []
+    }
+
     comments = [{
         name: "Aaron",
         comment: "Sup dude?"
 
-    },{
+    }, {
         name: "A-A-Ron",
         comment: "Sup wit you dude?"
-    },{
+    }, {
         name: "Ron",
         comment: "We meeting up after the show brah?"
     }]
 
-    state = {
-        events: []
-    }
+
 
     componentDidMount() {
         this.getEvents();
@@ -39,6 +42,20 @@ class Events extends Component {
             .catch(err => console.log(err));
     }
 
+    postComment = function (comment) {
+        API.postComment(comment)
+    }
+
+    getComments = () => {
+        API.getComments()
+            .then(res => {
+                this.setState({
+                    comments: res.data
+                })
+                console.log(this.state.comments)
+            })
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -53,7 +70,7 @@ class Events extends Component {
                             Date: {eve.date} <br></br>
                         </ListGroupItem>
                     ))}
-                    
+
                 </ListGroup>
                 <br></br>
                 <InputGroup>
@@ -63,9 +80,13 @@ class Events extends Component {
                 <div>
                     <h3>Comments</h3>
                     <Input type="textarea" name="text" id="exampleText" />
-                    <Button>Submit</Button>
+                    <Button onClick={() => {
+                        this.postComment()
+                    }
+                    }>Submit</Button>
 
                     {this.comments.map(item => <li>{item.comment} - {item.name}</li>)}
+                    {this.state.comments.map(item => <li>{item.comment} - {item.name}</li>)}
 
 
                 </div>
