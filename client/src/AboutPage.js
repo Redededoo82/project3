@@ -1,5 +1,4 @@
 import React from "react";
-import ReactStrap from "reactstrap";
 import ReactDOM from "react-dom";
 
 
@@ -18,12 +17,6 @@ const Example = (props) => {
   );
 };
 
-export default Example;
-
-import React from "react"
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay }
-
-
 const Example = (props) => {
   return (
     <div>
@@ -35,6 +28,24 @@ const Example = (props) => {
         </CardImgOverlay>
       </Card>
     </div>
+     <div>
+     <Card inverse>
+       <cardimg width="100%" src="/assets/318x270.svg" alt="Card image cap" /> 
+       <CardImgOverlay>
+         <CardTitle>Card Title</CardTitle>
+         <CardText>...</CardText>
+       </CardImgOverlay>
+     </Card>
+   </div>
+    <div>
+    <Card inverse>
+      <cardimg width="100%" src="/assets/318x270.svg" alt="Card image cap" /> 
+      <CardImgOverlay>
+        <CardTitle>Card Title</CardTitle>
+        <CardText>...</CardText>
+      </CardImgOverlay>
+    </Card>
+  </div>
   );
 };
 
