@@ -9,12 +9,19 @@ import Nav from './Nav';
 import Events from './Events';
 import Error from './Error';
 import API from "./utils/API"
+import { FaArrowCircleUp } from 'react-icons/fa';
 
 
 class App extends Component {
 
   postUser(username, password, email) {
     API.newUser(username, email, password)
+  }
+
+  getUsers() {
+    return(
+      API.getUser()
+    )
   }
 
   render() {
