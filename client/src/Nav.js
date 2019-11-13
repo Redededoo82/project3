@@ -31,6 +31,11 @@ function Navbar() {
             <NavItem>
               <NavLink  href="/">Home</NavLink>
             </NavItem>
+            <NavItem>
+            <button>
+            <FaCompactDisc className ="poo"/>
+            </button>
+            </NavItem>
           </Nav>
           
         </div>
