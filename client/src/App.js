@@ -10,6 +10,7 @@ import Events from './Events';
 import Error from './Error';
 import API from "./utils/API"
 
+
 class App extends Component {
 
   postUser(username, password, email) {
@@ -28,7 +29,7 @@ class App extends Component {
             {/* <Route path="/login" component={LoginForm}/> */}
             <Route path="/" exact component={Home} />
             <Route component={Error} />
-
+            
           </Switch>
         </div>
       </Router>
