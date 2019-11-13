@@ -8,25 +8,40 @@ import API from "./utils/API"
 
 
 class Events extends Component {
+    state = {
+        events: [],
+        comments: [],
+        value: ""
+    }
+
     comments = [{
         name: "Aaron",
         comment: "Sup dude?"
 
-    },{
+    }, {
         name: "A-A-Ron",
         comment: "Sup wit you dude?"
-    },{
+    }, {
         name: "Ron",
         comment: "We meeting up after the show brah?"
     }]
 
-    state = {
-        events: []
-    }
+
 
     componentDidMount() {
         this.getEvents();
+        this.getComments();
     }
+
+    handleChange = (event) => {
+        this.setState({ value: event.target.value});
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.postComment(this.state.value);
+      }
+    
 
     getEvents = () => {
         API.getEvents()
@@ -39,6 +54,20 @@ class Events extends Component {
             .catch(err => console.log(err));
     }
 
+    postComment = function (comment) {
+        API.postComment(comment)
+    }
+
+    getComments = () => {
+        API.getComments()
+            .then(res => {
+                this.setState({
+                    comments: res.data
+                })
+                console.log(this.state.comments)
+            })
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -53,7 +82,7 @@ class Events extends Component {
                             Date: {eve.date} <br></br>
                         </ListGroupItem>
                     ))}
-                    
+
                 </ListGroup>
                 <br></br>
                 <InputGroup>
@@ -62,10 +91,16 @@ class Events extends Component {
                 </InputGroup>
                 <div>
                     <h3>Comments</h3>
-                    <Input type="textarea" name="text" id="exampleText" />
-                    <Button>Submit</Button>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Name:
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
 
                     {this.comments.map(item => <li>{item.comment} - {item.name}</li>)}
+                    {this.state.comments.map(item => <li>{item.comment} - {item.name}</li>)}
 
 
                 </div>
