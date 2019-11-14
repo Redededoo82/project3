@@ -1,8 +1,31 @@
-import React from "react";
-
+import React, { Component } from "react";
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+
+import { Jumbotron, Container } from 'reactstrap';
+import API from "./utils/API"
+
+
+class ValidatedLoginForm extends Component {
+
+    getUsers = () => {
+        API.getUsers()
+        .then(function(res){
+            return(res)
+        })
+    }
+
+
 import { Jumbotron, Container, Card, Button, CardImg, CardTitle, CardText, CardDeck, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
+
+
+    render() {
+        return (
+            <Formik
+                initialValues={{ email: "", password: "" }}
+                onSubmit={(values, { setSubmitting }) => {
+                    console.log("submitting")
+                }}
 
 
 const ValidatedLoginForm = () => (
@@ -65,9 +88,58 @@ const ValidatedLoginForm = () => (
                         {errors.password && touched.password && (
                             <div className="input-feedback">{errors.password}</div>
                         )}
+
                         <div>
-                            <button type="submit" disabled={isSubmitting}>Login</button>
+                            <Jumbotron fluid>
+                                <Container fluid>
+                                    <h1 className="display-3">Fluid jumbotron</h1>
+                                    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                                </Container>
+                            </Jumbotron>
+
+                            <h1>Log in</h1>
+                            <form onSubmit={handleSubmit}>
+                                <label htmlFor="email">username</label>
+                                <input
+                                    name="email"
+                                    type="text"
+                                    placeholder="Enter your username"
+                                    value={values.username}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    className={errors.username && touched.username && "error"}
+                                />
+
+                                {errors.username && touched.username && (
+                                    <div className="input-feedback">{errors.username}</div>
+                                )}
+                                <br></br>
+                                <label htmlFor="email">Password</label>
+                                <input
+                                    name="password"
+                                    type="password"
+                                    placeholder="Enter your password"
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    className={errors.password && touched.password && "error"}
+                                />
+                                {errors.password && touched.password && (
+                                    <div className="input-feedback">{errors.password}</div>
+                                )}
+                                <div>
+                                    <button type="submit" disabled={isSubmitting}>Login</button>
+                                </div>
+                            </form>
                         </div>
+
+                    );
+                }}
+
+            </Formik>
+        )
+    }
+
                     </form>
 
                     <Jumbotron fluid>
@@ -143,8 +215,8 @@ const ValidatedLoginForm = () => (
             );
         }}
 
-    </Formik>
-);
+
+};
 
 export default ValidatedLoginForm;
 
