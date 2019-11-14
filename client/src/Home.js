@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { Jumbotron, Container } from 'reactstrap';
+import { Jumbotron, Container, Card, Button, CardImg, CardTitle, CardText, CardDeck, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 
 
 const ValidatedLoginForm = () => (
@@ -35,13 +35,6 @@ const ValidatedLoginForm = () => (
             } = props;
             return (
                 <div>
-                    <Jumbotron fluid>
-                        <Container fluid>
-                            <h1 className="display-3">Fluid jumbotron</h1>
-                            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                        </Container>
-                    </Jumbotron>
-
                     <h1>Log in</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">username</label>
@@ -76,6 +69,76 @@ const ValidatedLoginForm = () => (
                             <button type="submit" disabled={isSubmitting}>Login</button>
                         </div>
                     </form>
+
+                    <Jumbotron fluid>
+                        <Container fluid>
+                            <h1 className="display-3">Fluid jumbotron</h1>
+                            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                        </Container>
+                    </Jumbotron>
+                    
+                    <h1>Action Shots</h1>        
+                    <CardGroup>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card Subtitle</CardSubtitle>
+                                <CardText>This is a wider card with supporting taxt below as a lead in to additonal information...</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card Subtitle</CardSubtitle>
+                                <CardText>This is a wider card with supporting taxt below as a lead in to additonal information...</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card Subtitle</CardSubtitle>
+                                <CardText>This is a wider card with supporting taxt below as a lead in to additonal information...</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                    </CardGroup>
+
+                    <h1>Lost & Found</h1>
+                    <CardDeck>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card subtitle</CardSubtitle>
+                                <CardText>This card has supporting text below as a natural lead in to additional content.</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card subtitle</CardSubtitle>
+                                <CardText>This card has supporting text below as a natural lead in to additional content.</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                        <Card>
+                            <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
+                            <CardBody>
+                                <CardTitle>Card title</CardTitle>
+                                <CardSubtitle>Card subtitle</CardSubtitle>
+                                <CardText>This card has supporting text below as a natural lead in to additional content.</CardText>
+                                <Button>Button</Button>
+                            </CardBody>
+                        </Card>
+                    </CardDeck>
+                    <h1>Follow the Artists</h1>
                 </div>
             );
         }}
