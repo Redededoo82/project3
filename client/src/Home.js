@@ -3,17 +3,13 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { Jumbotron, Container } from 'reactstrap';
 import API from "./utils/API"
-
-
 class ValidatedLoginForm extends Component {
-
     getUsers = () => {
         API.getUsers()
         .then(function(res){
             return(res)
         })
     }
-
 
     render() {
         return (
@@ -52,7 +48,6 @@ class ValidatedLoginForm extends Component {
                                     <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                                 </Container>
                             </Jumbotron>
-
                             <h1>Log in</h1>
                             <form onSubmit={handleSubmit}>
                                 <label htmlFor="email">username</label>
@@ -65,7 +60,6 @@ class ValidatedLoginForm extends Component {
                                     onBlur={handleBlur}
                                     className={errors.username && touched.username && "error"}
                                 />
-
                                 {errors.username && touched.username && (
                                     <div className="input-feedback">{errors.username}</div>
                                 )}
@@ -90,16 +84,11 @@ class ValidatedLoginForm extends Component {
                         </div>
                     );
                 }}
-
             </Formik>
+            
         )
     }
 
 };
 
 export default ValidatedLoginForm;
-
-
-
-
-
