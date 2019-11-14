@@ -31,11 +31,13 @@ function Navbar() {
             <NavItem>
               <NavLink  href="/">Home</NavLink>
             </NavItem>
+            <Link to ="/">
             <NavItem>
             <button>
-            <FaCompactDisc className ="poo"/>
+            <FaCompactDisc className ="nav-icon"/>
             </button>
             </NavItem>
+            </Link>
           </Nav>
           
         </div>
