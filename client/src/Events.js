@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import Mapbox from "./Map"
 import {
     ListGroup, ListGroupItem, InputGroup,
     InputGroupAddon, Button, Input,
@@ -69,11 +70,13 @@ class Events extends Component {
             .catch(err => console.log(err));
     }
 
+
+
     render() {
         return (
             <div>
+                {/* <Mapbox></Mapbox> */}
 
-                
                 <ListGroup>
                     {this.state.events.map(eve => (
                         <ListGroupItem key={eve._id}>

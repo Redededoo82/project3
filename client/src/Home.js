@@ -10,6 +10,7 @@ class ValidatedLoginForm extends Component {
             return(res)
         })
     }
+
     render() {
         return (
             <Formik
@@ -17,7 +18,9 @@ class ValidatedLoginForm extends Component {
                 onSubmit={(values, { setSubmitting }) => {
                     console.log("submitting")
                 }}
+
                 validationSchema={Yup.object().shape({
+
                     username: Yup.string()
                         .required("required"),
                     password: Yup.string()
@@ -26,6 +29,7 @@ class ValidatedLoginForm extends Component {
                         .matches(/(?=.*[0-9])/, "Password must contain a number")
                 })}
             >
+
                 {props => {
                     const {
                         values,
@@ -84,6 +88,7 @@ class ValidatedLoginForm extends Component {
             
         )
     }
+
 };
 
 export default ValidatedLoginForm;
