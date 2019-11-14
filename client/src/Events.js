@@ -34,14 +34,14 @@ class Events extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({ value: event.target.value});
+        this.setState({ value: event.target.value });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         this.postComment(this.state.value);
-      }
-    
+    }
+
 
     getEvents = () => {
         API.getEvents()
@@ -72,6 +72,8 @@ class Events extends Component {
     render() {
         return (
             <div>
+
+                
                 <ListGroup>
                     {this.state.events.map(eve => (
                         <ListGroupItem key={eve._id}>
