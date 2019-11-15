@@ -6,6 +6,7 @@ module.exports = {
             .find({
             })
             .then(function(data){
+                console.log("yeah", data)
                 res.json(data);
             })
             .catch(err => res.status(422).json(err));

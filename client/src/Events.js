@@ -75,7 +75,7 @@ class Events extends Component {
     render() {
         return (
             <div>
-                {/* <Mapbox></Mapbox> */}
+                <Mapbox></Mapbox>
 
                 <ListGroup>
                     {this.state.events.map(eve => (
