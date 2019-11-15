@@ -75,16 +75,16 @@ class Events extends Component {
     render() {
         return (
             <div>
-                <Mapbox></Mapbox>
 
-                <ListGroup>
+                <ListGroup >
                     {this.state.events.map(eve => (
-                        <ListGroupItem key={eve._id}>
+                        <ListGroupItem style={{backgroundColor: "#006494"}} key={eve._id}>
                             <strong style={{ fontSize: "24px" }}>{eve.title}</strong> <br></br>
                             <hr></hr>
                             Description: {eve.description} <br></br>
                             Location: {eve.location} <br></br>
                             Date: {eve.date} <br></br>
+                            <Mapbox></Mapbox>
                         </ListGroupItem>
                     ))}
 
@@ -94,7 +94,7 @@ class Events extends Component {
                     <InputGroupAddon addonType="prepend"><Button>Search Events</Button></InputGroupAddon>
                     <Input />
                 </InputGroup>
-                <div>
+                <div style={{backgroundColor: "#247ba0"}}>
                     <h3>Comments</h3>
                     <form onSubmit={this.handleSubmit}>
                         <label>

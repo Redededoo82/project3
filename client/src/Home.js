@@ -41,11 +41,16 @@ class ValidatedLoginForm extends Component {
                         handleSubmit
                     } = props;
                     return (
-                        <div>
-                            <Jumbotron fluid>
+                        <div style={{backgroundColor: "#006494", height: "100%"}}>
+                            <Jumbotron fluid style={{backgroundColor: "#247ba0", border: "1px solid #23001e"}}>
                                 <Container fluid>
-                                    <h1 className="display-3">Fluid jumbotron</h1>
-                                    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                                    <h1 className="display-3"><strong>THE RULES</strong></h1>
+                                    <ul>
+                                        <li><strong>Don't break stuff</strong></li>
+                                        <li><strong>Don't steal stuff</strong></li>
+                                        <li><strong>Don't be a dick</strong></li>
+                                        <li><strong style={{fontSize: "24px"}}>LEAVE NO TRACE</strong></li>
+                                    </ul>
                                 </Container>
                             </Jumbotron>
                             <h1>Log in</h1>

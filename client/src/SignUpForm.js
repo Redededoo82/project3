@@ -49,7 +49,7 @@ class ValidatedSignUpForm extends Component {
                         handleSubmit
                     } = props;
                     return (
-                        <div>
+                        <div style={{backgroundColor: "#247ba0"}}>
                             <h1>Sign Up</h1>
                             <form onSubmit={handleSubmit}>
                                 <label htmlFor="email">Email</label>
