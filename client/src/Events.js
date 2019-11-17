@@ -5,10 +5,20 @@ import {
     InputGroupAddon, Button, Input,
 } from 'reactstrap';
 import API from "./utils/API"
-
+import fire from './config/Fire'
 
 
 class Events extends Component {
+
+    constructor(props) {
+        super(props);
+        this.logout=this.logout.bind(this)
+    }
+
+    logout(){
+        fire.auth().signOut()
+    }
+
     state = {
         events: [],
         comments: [],
@@ -107,6 +117,7 @@ class Events extends Component {
                     {this.comments.map(item => <li>{item.comment} - {item.name}</li>)}
                     {this.state.comments.map(item => <li>{item.comment} - {item.name}</li>)}
 
+                    <button onClick={this.logout}>Logout</button>
 
                 </div>
             </div>
