@@ -73,19 +73,20 @@ class ValidatedLoginForm extends Component {
                     } = props;
                     return (
                         <div style={{backgroundColor: "#006494", height: "100%"}}>
-                            <Jumbotron fluid style={{backgroundColor: "#247ba0", border: "1px solid #23001e"}}>
+                            <Jumbotron fluid style={{backgroundColor: "#247ba0", border: "1px solid #23001e", boxShadow: "0 0 1em 5px black",  textShadow: "1px 1px 1px gray", textAlign: "center"}}>
                                 <Container fluid>
                                     <h1 className="display-3"><strong>THE RULES</strong></h1>
+                                    <hr></hr>
                                     <ul>
-                                        <li><strong>Don't break stuff</strong></li>
-                                        <li><strong>Don't steal stuff</strong></li>
-                                        <li><strong>Don't be a dick</strong></li>
-                                        <li><strong style={{fontSize: "24px"}}>LEAVE NO TRACE</strong></li>
+                                        <h3><strong>Don't break stuff</strong></h3>
+                                        <h4><strong>Don't steal stuff</strong></h4>
+                                        <h5><strong>Don't be a dick</strong></h5>
+                                        <h2><strong >LEAVE NO TRACE</strong></h2>
                                     </ul>
                                 </Container>
                             </Jumbotron>
-                            <h1>Log in</h1>
-                            <form onSubmit={handleSubmit}>
+                            <h1 style={{textAlign: "center"}}>Log in</h1>
+                            <form onSubmit={handleSubmit} style={{textAlign: "center"}}>
                                 <label htmlFor="email">email</label>
                                 <input
                                     name="email"

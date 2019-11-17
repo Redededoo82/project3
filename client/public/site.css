@@ -1,9 +1,13 @@
   * {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Muli', sans-serif;
   }
   
-  html {
-    background-color: #1b98e0;
+
+  body{
+    padding: 50px;
+    background-color: #cccccc;
+    background-image: linear-gradient(black, #000066);
+    background-size: 100%;
   }
   
   .mapContainer {
