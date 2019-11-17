@@ -1,5 +1,4 @@
-import React, { Component, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken = "pk.eyJ1IjoiaWdneXl5IiwiYSI6ImNrMm94dm5pYzE4aDEzaG8zeTdncWUxdmwifQ.4CPUVbK2tT8OCvyXT_DnPQ"
