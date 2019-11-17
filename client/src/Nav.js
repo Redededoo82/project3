@@ -22,9 +22,9 @@ function Navbar() {
             </NavItem>  
             <NavItem>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="/signup">Sign Up</NavLink>
-            </NavItem>
+            </NavItem> */}
             {/* <NavItem>
               <NavLink href="/login">Log In</NavLink>
             </NavItem> */}
