@@ -80,7 +80,7 @@ class ValidatedLoginForm extends Component {
                                     <ul>
                                         <h3><strong>Don't break stuff</strong></h3>
                                         <h4><strong>Don't steal stuff</strong></h4>
-                                        <h5><strong>Don't be a dick</strong></h5>
+                                        
                                         <h2><strong >LEAVE NO TRACE</strong></h2>
                                     </ul>
                                 </Container>
